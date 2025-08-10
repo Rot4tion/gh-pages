@@ -28,6 +28,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare public assets
+        run: |
+          mkdir -p public
+          if [ -d src/public ]; then
+            cp -R src/public/. public/
+          fi
+
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:

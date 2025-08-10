@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: process.env.PAGES_BASE_PATH,
-  assetPrefix: process.env.PAGES_BASE_PATH + "/",
+  // Ensure static asset URLs are correctly prefixed on GitHub Pages
+  assetPrefix: process.env.PAGES_BASE_PATH,
 };
 
 export default nextConfig;
